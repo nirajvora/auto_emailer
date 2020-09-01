@@ -1,0 +1,38 @@
+Content-Type: text/html
+Content-Transfer-Encoding:8bit
+      
+<!doctype html>
+<html>
+ <head> 
+  <meta charset="UTF-8"> 
+ </head>
+ <body>
+  <div>
+   <% if @email.empty? %>
+     To the manager of <%= @page %> on YouTube,
+   <% else %> 
+     Hey <%= @name.split(" ").shift %>,
+   <% end %>
+  <div>
+   &nbsp;
+  </div>
+  <div>
+   I really love your page, <%= @page %>. All the music you promote is hyped and catchy, and I love how you keep it in tune with the culture. I wanted to reach out to see if you'd be willing to post my new single, Be Free, to your collection. I think it would fit right in. Here is a link to listen:
+  </div>
+  <div>
+   &nbsp;
+  </div>
+  <div>
+   <%= @email_config['link'] %>
+  </div>
+  <div>
+   Looking foward to hearing back from you.
+  </div>
+  <div> 
+   <p><strong class="">nivo.</strong></p> 
+   <p>NUIT SANS FIN<strong class=""><br class=""></strong></p> 
+   <p><strong class=""><br class=""></strong><span style="font-size: 6pt;">CONFIDENTIALITY NOTICE.The contents of this email message and any attachments are intended solely for the addressee(s) and may contain confidential and/or privileged information and may be legally protected from disclosure. If you are not the intended recipient of this message or their agent, or if this message has been addressed to you in error, please immediately alert the sender by reply email and then delete this message and any attachments. If you are not the intended recipient, you are hereby notified that any use, dissemination, copying, or storage of this message or its attachments is strictly prohibited.&nbsp;</span></p> 
+  </div>
+ </body>
+</html>
+--<%= marker %>

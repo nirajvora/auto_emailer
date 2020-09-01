@@ -1,0 +1,6 @@
+From: <%= @email_config['name'] %> <<%= @email_config['email'] %>>
+To: "<%= @email %>" <<%= @email %>>
+Subject: <%= @email_config['subject'] %>
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary = <%= marker %>
+--<%= marker %>
