@@ -17,5 +17,12 @@ templatepath = ARGV[1]
 email_collection = EmailCollection.new(filepath, templatepath)
 
 email_collection.email_targets.each do |email|
-  email.send
+  begin
+    email.send
+    puts "Successfully sent email to PAGE: #{email.page} EMAIL: #{email.email}"
+  rescue Exception => e
+    puts "Could not send email to PAGE: #{email.page} EMAIL: #{email.email}"
+    puts e
+    next
+  end
 end

@@ -3,6 +3,9 @@ require 'yaml'
 require 'erb'
 
 class InfluencerEmail
+  attr_reader :page
+  attr_reader :email
+
   def initialize(identity, email_template)
     @name = identity['name'] || ''
     @email = identity['email']
@@ -20,8 +23,6 @@ class InfluencerEmail
                     :plain) do |smtp|
       smtp.sendmail(mailtext(@email_template), @email_config['email'], [@email])
     end
-  rescue Exception => e
-    print 'Exception occured: ' + e
   end
 
   private
